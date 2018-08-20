@@ -2,8 +2,8 @@
     "manifest_version": 2,
 
     "name": "beeopen",
-    "description": ""
-    "version": "1.0",
+    "description": "Makes BeeStar better.",
+    "version": "1.6.6",
 
     "icons": { 
         "16": "images/icon16.png",
@@ -12,14 +12,20 @@
     },
           
     "permissions": [
-        "storage"
+        "webRequest", "webRequestBlocking", "http://www.beestar.org/*" 
     ],
   
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    
     "content_scripts": [
         {
             "matches": ["http://www.beestar.org/*"],
             "css": ["beeopen.css"],
             "js": ["jquery-3.2.1.min.js", "beeopen.js"]
         }
-    ]
+    ]    
 }
